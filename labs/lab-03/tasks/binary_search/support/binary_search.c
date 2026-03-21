@@ -17,20 +17,25 @@ check:
 
   if (v[middle] == dest) {
     goto found;
-  } else if (v[middle] < dest) {
-    goto right;
-  } else {
-    goto left;
   }
+  if (v[middle] < dest) {
+    goto right;
+  }
+  goto left;
+
 left:
   end = middle - 1;
   goto skip;
+
 right:
   start = middle + 1;
+
 skip:
   goto check;
+
 found:
   return middle;
+
 not_found:
   return -1;
 }
