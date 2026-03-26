@@ -16,6 +16,21 @@ main:
     mov rcx, QWORD [N]       ; we want to find the N-th fibonacci number; N = RCX = 7
     PRINTF64 `%d\n\x0`, rcx  ; DO NOT REMOVE/MODIFY THIS LINE
 
+
+    mov rax, 0
+    mov rbx, 1
+
+next:
+    mov rdx, rax
+    add rax, rbx
+    mov rbx, rdx
+    
+    dec rcx
+    jnz next
+
+    PRINTF64 `%d\n\x0`, rax
+
+
     ; TODO: calculate the N-th fibonacci number (f(0) = 0, f(1) = 1)
 
     xor rax, rax
