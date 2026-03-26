@@ -15,6 +15,8 @@ main:
     test al, al
     ;TODO: activate the Carry Flag
 
+    add al, 1
+
     jc carry_flag
     jmp end
 
